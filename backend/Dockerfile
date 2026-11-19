@@ -16,7 +16,7 @@ RUN pip install --upgrade pip \
 # Copy as /app/app to preserve package
 COPY app/ /app/app/
 
-RUN useradd -m appuser && chown -R appuser:appuser /app
+RUN useradd -m appuser && mkdir -p /app/app/data && chown -R appuser:appuser /app
 USER appuser
 
 EXPOSE 8000
